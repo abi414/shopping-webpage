@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>eShop - Single Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .hidden { display: none; }
+    .product-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">🛍️ eShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#" onclick="showSection('shop')">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('cart')">Cart 🛒</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('login')">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('signup')">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"onclick="showSection('About')">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Banner -->
+<section class="bg-gradient text-white text-center py-5" style="background: linear-gradient(90deg, #18b34b, #6512b8);">
+  <div class="container">
+    <h1 class="display-4">Welcome to Electronic Shop</h1>
+    <p class="lead">Explore our handpicked collection of products</p>
+  </div>
+</section>
+
+<!-- Shop Section -->
+<section id="shopSection" class="container py-5">
+  <h2 class="mb-4 text-center">🛒 Popular Products</h2>
+  <div class="row g-4">
+
+    <!-- Product 1 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://electronicworld.in/wp-content/uploads/2021/06/Fire-Boltt-Full-Touch-Smart-Watch.png" alt="Smart Watch" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Smart Watch</h5>
+          <p class="card-text">RS.10000</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Smart Watch', 10000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://brain-images-ssl.cdn.dixons.com/6/2/10207226/u_10207226.jpg" class="card-img-top" alt="Headphones" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Noise-Cancelling Headphones</h5>
+          <p class="card-text">RS.50000</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Headphones', 50000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://th.bing.com/th/id/OIP.mK86e5IKFb8QUgerx-OhuQHaE8?rs=1&pid=ImgDetMain.jpg" class="card-img-top" alt="Backpack" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Travel Backpack</h5>
+          <p class="card-text">RS.1500</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Backpack', 1500)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://i5.walmartimages.com/asr/ee3423d4-af0c-402a-94a6-8492f796f25e.73ef69e9bb066db1fb39eebb54bb89eb.jpeg" class="card-img-top" alt="Jacket" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Winter Jacket</h5>
+          <p class="card-text">RS.6000</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Jacket', 6000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://th.bing.com/th/id/OIP.g-IXaRH2deMRDkasq9BDFQHaHa?rs=1&pid=ImgDetMain.jpg" class="card-img-top" alt="Bluetooth Speaker" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Bluetooth Speaker</h5>
+          <p class="card-text">RS.5500</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Bluetooth Speaker', 5500)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDuDbd8-KkTCgLfrzOLi30gDOcUv-PtPQSAA&s.jpg" class="card-img-top" alt="Tablet" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Galaxy Tablet</h5>
+          <p class="card-text">RS.50000</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Galaxy Tablet', 50000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://i.pcmag.com/imagery/roundups/02Qp4rvOJa12Y8ekdbbBYMA-10..v1731362247.jpg" class="card-img-top" alt="Laptop" />
+        <div class="card-body text-center">
+          <h5 class="card-title">Ultrabook Laptop</h5>
+          <p class="card-text">RS.15000</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('Ultrabook Laptop', 15000)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://m.media-amazon.com/images/I/51mZo23XLiL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="charger" />
+         <div class="card-body text-center">
+           <h5 class="card-title">charger</h5>
+          <p class="card-text">RS.1500</p>
+          <button class="btn btn-outline-primary" onclick="addToCart('charger', 1500)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card">
+        <img src="https://m.media-amazon.com/images/I/71DYlRN51tL._AC_SL1500_.jpg" class="card-img-top" alt="keyboard" />
+         <div class="card-body text-center">
+           <h5 class="card-title">keyboard</h5>
+          <p class="card-text">RS.2600</p> 
+          <button class="btn btn-outline-primary" onclick="addToCart('keyboard', 2600)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Cart Section -->
+<section id="cartSection" class="container py-5 hidden">
+  <h2 class="text-center mb-4">🛒 Your Shopping Cart</h2>
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Product</th>
+        <th class="text-end">Price</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody id="cartItems"></tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <th id="cartTotal" class="text-end"><RS class="RS.00000"></RS></th>
+        <th></th>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="text-center">
+    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+  </div>
+</section>
+
+<!-- Login Section -->
+<section id="loginSection" class="container py-5 hidden">
+  <h2 class="text-center mb-4">🔐 Login</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form onsubmit="event.preventDefault(); alert('Logged in (mock)');">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Sign Up Section -->
+<section id="signupSection" class="container py-5 hidden">
+  <h2 class="text-center mb-4">📝 Sign Up</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form onsubmit="event.preventDefault(); alert('Account created (mock)');">
+        <div class="mb-3">
+          <label for="signupName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="signupName" placeholder="Your name">
+        </div>
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="signupPassword" placeholder="Create password">
+        </div>
+        <button type="submit" class="btn btn-success w-100">Create Account</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- JS Logic -->
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${name} added to cart.`);
+  }
+
+  function showSection(section) {
+    const sections = ['shopSection', 'cartSection', 'loginSection', 'signupSection'];
+    sections.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+    if (section === 'shop') {
+      document.getElementById('shopSection').classList.remove('hidden');
+    } else if (section === 'cart') {
+      loadCart();
+      document.getElementById('cartSection').classList.remove('hidden');
+    } else if (section === 'login') {
+      document.getElementById('loginSection').classList.remove('hidden');
+    } else if (section === 'signup' || section === 'sign up') {
+      document.getElementById('signupSection').classList.remove('hidden');
+    }
+  }
+
+  function loadCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartTable = document.getElementById('cartItems');
+    cartTable.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td class="text-end">$${item.price.toFixed(2)}</td>
+        <td class="text-center">
+          <button class="btn btn-sm btn-outline-danger" onclick="removeItem(${index})">Remove</button>
+        </td>`;
+      cartTable.appendChild(row);
+      total += item.price;
+    });
+    document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
+  }
+
+  function clearCart() {
+    localStorage.removeItem('cart');
+    loadCart();
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  // Show shop section by default
+  showSection('shop');
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
